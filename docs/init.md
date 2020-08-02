@@ -13,3 +13,8 @@ yarn add react react-dom
 ```
 
 
+### Add ts config
+
+```cmd
+npx tsc
+```
