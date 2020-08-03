@@ -4,7 +4,7 @@ module.exports = {
   name: 'server side',
   mode: "development",
   entry: {
-    App: path.resolve(__dirname, "../src/server/serverApp.ts")
+    serverApp: path.resolve(__dirname, "../src/server/serverApp.ts")
   },
   output: {
     filename: '[name].js',

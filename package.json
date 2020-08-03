@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean:dist": "rm -rf dist",
-    "start:dev": "yarn run clean:dist && yarn run server",
-    "server": "webpack --config=./config/webpack.server.config.js"
+    "start:dev": "yarn run clean:dist && yarn run build && yarn run start",
+    "build": "webpack --config=./config/webpack.server.config.js",
+    "start": "node ./dist/server/serverApp.js"
   },
   "author": "",
   "license": "ISC",
