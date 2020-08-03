@@ -1,4 +1,5 @@
 const path = require("path")
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   name: 'server side',
@@ -23,5 +24,6 @@ module.exports = {
         loader: "ts-loader"
       }
     ]
-  }
+  },
+  externals: [nodeExternals()]
 };
