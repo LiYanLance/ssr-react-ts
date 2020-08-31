@@ -1,10 +1,15 @@
 import express from "express"
+import { loadTemplate } from "./loadTemplate";
 
 const app = express()
 const port = 3000
 
 app.get("/", (req, res) => {
-  res.send('Hello World!')
+  const html = loadTemplate()
+
+  res.status(200)
+    .header("Cache-Control", "300")
+    .send(html);
 })
 
 app.listen(port, () => {

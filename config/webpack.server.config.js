@@ -16,12 +16,31 @@ module.exports = {
     __dirname: true,
     __filename: true
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: "ts-loader"
+      },
+      {
+        test: /\.html$/,
+        use: ["raw-loader"]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "img/[hash]-[name].[ext]",
+              limit: 10000
+            }
+          }
+        ]
       }
     ]
   },
