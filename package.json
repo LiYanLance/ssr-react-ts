@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean:dist": "rm -rf dist",
-    "start:dev": "yarn run clean:dist && yarn run build && yarn run start",
-    "build": "webpack --config=./config/webpack.server.config.js --progress --colors",
-    "start": "node ./dist/server/serverApp.js"
+    "start:dev": "yarn run clean:dist && yarn run build && yarn run start:server",
+    "build": "yarn run build:client && yarn run build:server",
+    "build:client": "webpack --config=./config/webpack.client.config.js --progress --colors",
+    "build:server": "webpack --config=./config/webpack.server.config.js --progress --colors",
+    "start:server": "node ./dist/serverApp.js"
   },
   "author": "",
   "license": "ISC",

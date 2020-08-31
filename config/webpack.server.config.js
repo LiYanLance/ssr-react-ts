@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '../dist/server')
+    path: path.resolve(__dirname, '../dist')
   },
   target: 'node',
   node: {
@@ -29,18 +29,6 @@ module.exports = {
       {
         test: /\.html$/,
         use: ["raw-loader"]
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              name: "img/[hash]-[name].[ext]",
-              limit: 10000
-            }
-          }
-        ]
       }
     ]
   },
